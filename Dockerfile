@@ -1,13 +1,13 @@
 FROM node:16
 
-WORKDIR /code/
+WORKDIR /CODE/
 
-COPY yarn.lock /code/
+COPY package.json yarn.lock /CODE/
 
-RUN yarn install
+RUN yarn install --non-interactive
 
-COPY . /code/
+COPY . /CODE/
 
 RUN yarn build
 
-CMD ["yarn", "--silent", "start"]
+CMD ["node", "."]
