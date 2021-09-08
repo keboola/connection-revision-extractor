@@ -1,12 +1,12 @@
 FROM node:16
 
-WORKDIR /CODE/
+WORKDIR /code/
 
-COPY package.json yarn.lock /CODE/
+COPY package.json yarn.lock /code/
 
 RUN yarn install --non-interactive
 
-COPY . /CODE/
+COPY . /code/
 
 RUN yarn build
 
